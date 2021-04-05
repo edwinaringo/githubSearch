@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Search } from "../Search";
 import { Repository } from '../repository';
-import { UserRequestService } from '../user-request.service';
+import { RepoRequestService } from '../repo-request.service';
 
 @Component({
   selector: 'app-repositories',
@@ -9,14 +9,14 @@ import { UserRequestService } from '../user-request.service';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
-  repo: Repository[] = [];
+  repos: Repository[] = [];
 
-  constructor(private userService:UserRequestService) { }
+  constructor(private repoService:RepoRequestService) { }
 
   myRepoSearch(searchName: string) {
-    this.userService.searchUsersRequest(searchName).then(
+    this.repoService.searchRepoRequest(searchName).then(
       (success)=>{
-        this.repo = this.userService.foundUser;
+        this.repos = this.repoService.foundRepo;
       },
       (error)=>{
         console.log(error)
