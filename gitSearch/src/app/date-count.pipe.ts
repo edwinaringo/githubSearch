@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'dateCount'
+  name: 'dateCount',
+  pure: false
 })
 export class DateCountPipe implements PipeTransform {
 
@@ -10,7 +11,7 @@ export class DateCountPipe implements PipeTransform {
       const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);
       if (seconds < 29)
       return 'Just now';
-      const intervals = {
+      const intervals:any = {
         'year': 31536000,
         'month': 2592000,
         'week': 604800,
