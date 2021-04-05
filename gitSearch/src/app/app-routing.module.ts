@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent},
-  { path: 'repositories', component: RepositoriesComponent}
+  { path: 'repositories', component: RepositoriesComponent},
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
