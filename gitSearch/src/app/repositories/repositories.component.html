@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Enter a github username to view the repositories</p>
     <app-search (searchOutput)="myRepoSearch($event)"></app-search>
 
     <div *ngFor="let repo of repos">
@@ -16,7 +17,7 @@
         <div *ngIf="repo">
             <p>Description: <span>{{repo.description}}</span></p>
             <p>Language: <span>{{repo.language}}</span></p>
-            <p>Date Created: <span>{{repo.created_at|date}}</span></p>
+            <p>Date Created: <span>{{repo.created_at|dateCount}}</span></p>
             <p>Visit: <span>{{repo.html_url}}</span></p>
         </div>
     </div>
