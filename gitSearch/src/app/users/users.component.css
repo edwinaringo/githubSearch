@@ -35,5 +35,6 @@ img{
 }
 
 .name{
-  border-bottom: solid 3px #0088cc;
+  border-bottom: solid 3px purple;
+  color: purple;
 } 

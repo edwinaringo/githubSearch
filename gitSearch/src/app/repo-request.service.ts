@@ -27,6 +27,7 @@ export class RepoRequestService {
         'q': searchName,
       }
     }
+    
     let promise = new Promise<void>((resolve,reject)=>{
       this.https.get<ApiResponse>('https://api.github.com/search/repositories', options).toPromise().then(response=>{
         this.foundRepo = response.items
