@@ -13,7 +13,7 @@
         <app-search (searchOutput)="myRepoSearch($event)"></app-search>
 
         <div *ngFor="let repo of repos">
-            <div class="repos">
+            <div appHighlight class="repos">
                 <div *ngIf="repo" >
                     <h2>Name:<span class="highlight">{{repo.name}}</span></h2>
                 </div>
@@ -21,10 +21,11 @@
                     <p>Description: <span>{{repo.description}}</span></p>
                     <p>Language: <span>{{repo.language}}</span></p>
                     <p>Date Created: <span>{{repo.created_at|dateCount}}</span></p>
-                    <p>Visit: <span>{{repo.html_url}}</span></p>
+                    <p>Stars: <span>{{repo.stargazers_count}}</span></p>
+                    <p>Forks: <span>{{repo.forks_count}}</span></p>
+                    <p>Visit: <a href="{{repo.html_url}}"><button class="btn-outline-success btn btn-sm">Go to Repository</button></a></p>
+
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html> 
+    

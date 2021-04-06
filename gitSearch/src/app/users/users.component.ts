@@ -29,6 +29,7 @@ export class UsersComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.mySearch('edwinaringo');
   }
 
 }
