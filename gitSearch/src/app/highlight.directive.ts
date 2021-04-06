@@ -12,10 +12,10 @@ export class HighlightDirective {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight('null');
+    this.highlight(null);
   }
 
-  private highlight(color: string) {
+  private highlight(color: any) {
     this.ele.nativeElement.style.backgroundColor = color;
   }
 
