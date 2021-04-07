@@ -1,5 +1,6 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { User } from '../user';
+import { RepoRequestService } from '../repo-request.service';
 
 
 @Component({
@@ -8,11 +9,11 @@ import { User } from '../user';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
+  
   searchName!: string;
   @Output() searchOutput = new EventEmitter()
 
-  constructor() { }
+  constructor(private repoService:RepoRequestService) { }
 
   ngOnInit(): void {
   }

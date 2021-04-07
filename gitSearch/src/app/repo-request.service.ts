@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment.prod';
 import { Repository } from './repository';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class RepoRequestService {
     this.foundRepo;
   }
 
-  searchRepoRequest(searchRepo: string){
+  searchRepoRequest(searchName: string){
     interface ApiResponse{
       total_count:number;
       incomplete_results:boolean;
@@ -24,7 +24,7 @@ export class RepoRequestService {
         'Authorization': 'Basic ' + btoa(environment.apiKey)
       },
       params: {
-        'q': searchRepo,
+        'q': searchName,
       }
     }
     
@@ -41,7 +41,8 @@ export class RepoRequestService {
     })
     return promise
   }
-  searchRepoByUsernameRequest(searchName: string){
+}
+ /* searchRepoByUsernameRequest(searchName: string){
     interface ApiResponse{
       total_count:number;
       incomplete_results:boolean;
@@ -67,4 +68,4 @@ export class RepoRequestService {
     })
     return promise
   }
-}
+}*/
