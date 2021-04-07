@@ -13,7 +13,7 @@ export class RepoRequestService {
     this.foundRepo;
   }
 
-  searchRepoRequest(searchName: string){
+  searchRepoRequest(searchRepo: string){
     interface ApiResponse{
       total_count:number;
       incomplete_results:boolean;
@@ -24,7 +24,7 @@ export class RepoRequestService {
         'Authorization': 'Basic ' + btoa(environment.apiKey)
       },
       params: {
-        'q': searchName,
+        'q': searchRepo,
       }
     }
     

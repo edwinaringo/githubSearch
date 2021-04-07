@@ -14,7 +14,7 @@ export class RepositoriesComponent implements OnInit {
   constructor(private repoService:RepoRequestService) { }
 
   myRepoSearch(searchName: string) {
-    this.repoService.searchRepoByUsernameRequest(searchName).then(
+    this.repoService.searchRepoRequest(searchName).then(
       (success)=>{
         this.repos = this.repoService.foundRepo;
       },
