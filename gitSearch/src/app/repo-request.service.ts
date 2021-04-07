@@ -41,8 +41,8 @@ export class RepoRequestService {
     })
     return promise
   }
-}
- /* searchRepoByUsernameRequest(searchName: string){
+
+  searchRepoByUsernameRequest(searchName: string){
     interface ApiResponse{
       total_count:number;
       incomplete_results:boolean;
@@ -68,4 +68,4 @@ export class RepoRequestService {
     })
     return promise
   }
-}*/
+}
