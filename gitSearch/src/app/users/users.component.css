@@ -38,3 +38,9 @@ img{
   border-bottom: solid 3px purple;
   color: purple;
 } 
+.repos{
+  border: solid black 2px;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: #e6e6e6;
+}
